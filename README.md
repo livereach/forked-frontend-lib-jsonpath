@@ -201,7 +201,7 @@ Script expressions (i.e, `(...)` and `?(...)`) are statically evaluated via [sta
 
 #### Grammar
 
-This project uses a formal BNF [grammar](https://github.com/livereach/jsonpath/blob/master/include/grammar.js) to parse JSONPath expressions, an attempt at reverse-engineering the intent of the original implementation, which parses via a series of creative regular expressions.  The original regex approach can sometimes be forgiving for better or for worse (e.g., `$['store]` => `$['store']`), and in other cases, can be just plain wrong (e.g. `[` => `$`).
+This project uses a formal BNF [grammar](https://github.com/livereach/jsonpath/blob/master/lib/grammar.js) to parse JSONPath expressions, an attempt at reverse-engineering the intent of the original implementation, which parses via a series of creative regular expressions.  The original regex approach can sometimes be forgiving for better or for worse (e.g., `$['store]` => `$['store']`), and in other cases, can be just plain wrong (e.g. `[` => `$`).
 
 #### Other Minor Differences
 
