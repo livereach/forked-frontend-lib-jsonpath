@@ -2,14 +2,15 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         outputFolder: ".",
+        name: 'jsonpath',
 
         browserify: {
             main: {
                 src: ['index.js'],
-                dest: '<%= outputFolder %>/<%= pkg.name %>.js',
+                dest: '<%= outputFolder %>/<%= name %>.js',
                 options: {
                     browserifyOptions: { standalone: '<%= pkg.name %>' },
-                    banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n',
+                    banner: '/*! <%=  pkg.name %> <%= pkg.version %> */\n',
                     alias: {
                         "jsonpath": "./index.js"
                     },
@@ -53,8 +54,8 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n'
             },
             build: {
-                src: '<%= outputFolder %>/<%= pkg.name %>.js',
-                dest: '<%= outputFolder %>/<%= pkg.name %>.min.js'
+                src: '<%= outputFolder %>/<%= name %>.js',
+                dest: '<%= outputFolder %>/<%= name %>.min.js'
             }
         }
 

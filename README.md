@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.org/dchester/jsonpath.png?branch=master)](https://travis-ci.org/dchester/jsonpath)
+# differences from original repo:
+
+* Better interop with other JsonPath libs (including ports to Java): `jp.stringify` now produces properly escaped single quoted `['email@example.com']` string literals
+* merged some hanging PRs from original repo
+
 
 # jsonpath
 
@@ -15,7 +19,7 @@ var cities = [
   { name: "Rome",   "population": 2870528 }
 ];
 
-var jp = require('jsonpath');
+var jp = require('@livereach/jsonpath');
 var names = jp.query(cities, '$..name');
 
 // [ "London", "Berlin", "Madrid", "Rome" ]
@@ -25,7 +29,7 @@ var names = jp.query(cities, '$..name');
 
 Install from npm:
 ```bash
-$ npm install jsonpath
+$ npm install @livereach/jsonpath
 ```
 
 ## JSONPath Syntax
@@ -99,7 +103,7 @@ JSONPath                      | Description
 `$..book[?(@.isbn)]`            | Filter all books with isbn number
 `$..book[?(@.price<10)]`        | Filter all books cheaper than 10
 `$..book[?(@.price==8.95)]`        | Filter all books that cost 8.95
-`$..book[?(@.price<30 && @.category=="fiction")]`        | Filter all fiction books cheaper than 30
+`$..book[?(@.price<30 && @.category=='fiction')]`        | Filter all fiction books cheaper than 30
 `$..*`                         | All members of JSON structure
 
 
@@ -197,7 +201,7 @@ Script expressions (i.e, `(...)` and `?(...)`) are statically evaluated via [sta
 
 #### Grammar
 
-This project uses a formal BNF [grammar](https://github.com/dchester/jsonpath/blob/master/lib/grammar.js) to parse JSONPath expressions, an attempt at reverse-engineering the intent of the original implementation, which parses via a series of creative regular expressions.  The original regex approach can sometimes be forgiving for better or for worse (e.g., `$['store]` => `$['store']`), and in other cases, can be just plain wrong (e.g. `[` => `$`). 
+This project uses a formal BNF [grammar](https://github.com/livereach/jsonpath/blob/master/include/grammar.js) to parse JSONPath expressions, an attempt at reverse-engineering the intent of the original implementation, which parses via a series of creative regular expressions.  The original regex approach can sometimes be forgiving for better or for worse (e.g., `$['store]` => `$['store']`), and in other cases, can be just plain wrong (e.g. `[` => `$`).
 
 #### Other Minor Differences
 
