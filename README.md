@@ -214,6 +214,9 @@ As a result of using a real parser and static evaluation, there are some arguabl
 - non-ascii non-word characters are no-longer valid in member identifier names; use quoted subscript strings instead (e.g., `$['$']` instead of `$.$`)
 - unions now yield real unions with no duplicates rather than concatenated results
 
+#### Publishing
+    npm publish --access=public
+
 ## License
 
 [MIT](LICENSE)
