@@ -1,7 +1,7 @@
 {
   "name": "@livereach/jsonpath",
   "description": "Query JavaScript objects with JSONPath expressions. Robust / safe JSONPath engine for Node.js.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "david@fmail.co.uk",
   "contributors": [
     "David Chester (https://github.com/dchester)",
