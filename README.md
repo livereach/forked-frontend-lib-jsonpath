@@ -1,4 +1,4 @@
-# Differences from the original repo:
+# Differences from the upstream repo:
 
 * Better interop with other JsonPath libs (including ports to Java): `jp.stringify` now produces properly escaped single quoted `['email@example.com']` string literals.
 * Merged some hanging PRs from original repo.
