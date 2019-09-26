@@ -216,7 +216,11 @@ As a result of using a real parser and static evaluation, there are some arguabl
 - unions now yield real unions with no duplicates rather than concatenated results
 
 #### Publishing
-    npm publish --access=public
+```
+npm version [patch|minor|major]
+git push --follow-tags
+npm publish --access=public
+```
 
 ## License
 
